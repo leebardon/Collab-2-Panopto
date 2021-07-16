@@ -1,0 +1,8 @@
+First:
+pytest <test_file> --cov=<module to check for coverage>
+
+example: 
+pytest unit_tests/test_downloads.py --cov=src.models.Downloads
+
+Then: 
+coverage report -m

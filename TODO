@@ -1,0 +1,3 @@
++ Failed uploads don't seem to want to be deleted properly
++ Add bit to manual run enabling to run on single course instead of all
++ Failure case: folder<>course_id saved in file but folder is actually gone from panopto. What then? 

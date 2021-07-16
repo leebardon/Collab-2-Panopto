@@ -1,0 +1,9 @@
+Participant,Message,Time,Message id
+Mr Abdullah Alsherefi,"If we can query the columns of subject, predicate and object, do we need to query the graph column directly?",00:07:09,1827763572
+Mr Abdullah Alsherefi,Do we use floats and doubles in our queries?,00:20:56,1827987945
+Mr Abdullah Alsherefi,yes,00:22:14,1828007146
+Mr Abdullah Alsherefi,I would appreciate it if there is anyway you can provide us with practical tutorials that we can follow and apply to fully understand the concepts introduced in this lecture.,00:45:28,1828343321
+Mr Abdullah Alsherefi,and are these examples up to date? Do we need to worry if some of them are outdated?,00:49:20,1828393882
+Mr Adam Putland,I think dbpedia has a sparql endpoint you can play around with aswell,00:49:29,1828395981
+MISS Panpan Wu,Could you please use cursor or pen to indicate the codes or something important you are explaining?It's a bit difficult to follow without highlighting.,00:50:31,1828409661
+Mr Abdullah Alsherefi,I appreciate it. Thanks.,00:51:46,1828425679
