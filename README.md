@@ -25,7 +25,7 @@ of managing packages and environments.
 <b>NOTE 2:</b> Development is otherwise ongoing. In particular, a recent large-scale refactor has left some unit tests 
 in need of reconfiguring (as of 19th July 2021).
 
-### Environment Set-Up 
+## Environment Set-Up 
 
 * Clone the project to the your desired server
 * Install Python 3.9
@@ -42,14 +42,14 @@ On successful completion of the above, activate the project's environment by run
 
 `conda activate collaborate-to-panopto`
 
-### API & SSL Config.
+## API & SSL Config.
 
 Collab-2-Panopto interacts with two external REST API services: namely the Blackboard Collaborate REST API, and the Panopto 
 REST API. It also requires configuration details to enable successful sending of alert emails to service owners and maintainers. 
 To enable this process, a configuration template <code>ConfigTemplate.py</code> is provided in the <code> /config/</code> folder. Please 
 copy this into a new file, fill out the relevant details, and save the file as <code>Config.py</code> within the same directory.
 
-### Config.py
+## Config.py
 
 <b> Collaborate Settings </b>
 
@@ -89,7 +89,7 @@ This will print <code> -- PRESS ENTER FOR MANUAL RUN -- </code> and launch a cou
 When manual run has been selected, two options are available: <code>Enter number of weeks or 'p' for preview</code>. Entering a number <code>n</code>(can be 0) will start the application and process recordings from <code>n</code> weeks back up until now. Entering <code>p</code> instead of a number will start preview mode, detailed below. Any other input will exit the application.
 
 
-### Preview Mode
+## Preview Mode
 
 Preview mode allows to launch a "dry run" where the application will simulate what it would do, without actually doing anything. This is useful when looking for information on what launching the application would do if started.
 
@@ -111,5 +111,13 @@ Upon launching the application, a pid file is created in <code>/home/user/tmp/ru
 ![](/data/Collab-2-Panopto.png)
 
 
+## Credits 
+   
+This project was inspired by and adapted from: 
+   
+PyCollab: https://github.com/zerausolrac/PyCollab - MIT License
 
+OSCELOT: https://github.com/OSCELOT/Collab-Panopto - Blackboard Open Source License
+   
+BulkExportBBCollaborateRecordings : https://github.com/SimonXIX/BulkExportBBCollaborateRecordings - MIT License
 
