@@ -46,26 +46,8 @@ On successful completion of the above, activate the project's environment by run
 
 Collab-2-Panopto interacts with two external REST API services: namely the Blackboard Collaborate REST API, and the Panopto 
 REST API. It also requires configuration details to enable successful sending of alert emails to service owners and maintainers. 
-To enable this process, a configuration template <code>ConfigTemplate.py</code> is provided in the <code> /config/</code> folder. 
-
-`credentials = {
-    "verify_certs": "True",
-    "collab_key": "Collab Key",
-    "collab_secret": "Collab Secret",
-    "collab_base_url": "us.bbcollab.com/collab/api/csa",
-    "ppto_server": "panoptoServer",
-    "ppto_client_id": "panoptoClientId",
-    "ppto_client_secret": "panoptoClientSecret",
-    "ppto_username": "panoptoUserName",
-    "ppto_password": "panoptoPassword",
-    "email_smtp_tls_port": "587",  # For SSL
-    "smtp_server": "smtp.office365.com",
-    "sender_email": "sender@url.com",
-    "receiver_info_email": "receiver_info@url.com",
-    "receiver_alert_email": "receiver_alert@url.com"
-  }`
-
-Please copy this into a new file, fill out the relevant details, and save the file as <code>Config.py</code> within the same directory.
+To enable this process, a configuration template <code>ConfigTemplate.py</code> is provided in the <code> /config/</code> folder. Please 
+copy this into a new file, fill out the relevant details, and save the file as <code>Config.py</code> within the same directory.
 
 ### Config.py
 
