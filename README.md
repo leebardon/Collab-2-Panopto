@@ -108,7 +108,7 @@ Upon launching the application, a pid file is created in <code>/home/user/tmp/ru
 
 ## High-Level Overview 
 
-
+![](/data/Collab-2-Panopto.png)
 
 
 
