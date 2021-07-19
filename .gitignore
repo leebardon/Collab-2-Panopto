@@ -1,6 +1,7 @@
 
 /config/Config.py
-/unit_tests/unit_test_data/unit_test_downloads/*mp4
+/unit_tests/unit_test_data/unit_test_downloads/*.mp4
+
 
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
