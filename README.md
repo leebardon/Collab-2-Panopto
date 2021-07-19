@@ -27,7 +27,7 @@ in need of reconfiguring (as of 19th July 2021).
 
 ### Environment Set-Up 
 
-* Clone the project to the desired server from the [https://igit.soton.ac.uk/Blackboard/collaborate-2-panopto appropriate iGit repository] 
+* Clone the project to the your desired server
 * Install Python 3.9
 * Obtain the most appropriate version of the [https://docs.conda.io/en/latest/miniconda.html package manager miniconda] for Python 3.9
 * Ensure that Python [https://pip.pypa.io/en/stable/installing/ package manager 'Pip'] is installed on the server 
@@ -46,26 +46,8 @@ On successful completion of the above, activate the project's environment by run
 
 Collab-2-Panopto interacts with two external REST API services: namely the Blackboard Collaborate REST API, and the Panopto 
 REST API. It also requires configuration details to enable successful sending of alert emails to service owners and maintainers. 
-To enable this process, a configuration template <code>ConfigTemplate.py</code> is provided in the <code> /config/</code> folder. 
-
-`credentials = {
-    "verify_certs": "True",
-    "collab_key": "Collab Key",
-    "collab_secret": "Collab Secret",
-    "collab_base_url": "us.bbcollab.com/collab/api/csa",
-    "ppto_server": "panoptoServer",
-    "ppto_client_id": "panoptoClientId",
-    "ppto_client_secret": "panoptoClientSecret",
-    "ppto_username": "panoptoUserName",
-    "ppto_password": "panoptoPassword",
-    "email_smtp_tls_port": "587",  # For SSL
-    "smtp_server": "smtp.office365.com",
-    "sender_email": "sender@url.com",
-    "receiver_info_email": "receiver_info@url.com",
-    "receiver_alert_email": "receiver_alert@url.com"
-  }`
-
-Please copy this into a new file, fill out the relevant details, and save the file as <code>Config.py</code> within the same directory.
+To enable this process, a configuration template <code>ConfigTemplate.py</code> is provided in the <code> /config/</code> folder. Please 
+copy this into a new file, fill out the relevant details, and save the file as <code>Config.py</code> within the same directory.
 
 ### Config.py
 
@@ -92,19 +74,41 @@ For development purposes, it's instructive to create a client_id and client_secr
   "ppto_client_secret": obtained client_secret
     
 
-Miniconda is used to manage dependancies - please ensure it's installed before proceeding. 
+## To Run
+   
+Once the environment has been successfully set-up and activated, and <code>Config.py</code> has been created and updated with the appropriate credentials, the program can be launched.
 
-```bash 
-conda env create -f environment.yml
-conda activate collaborate-to-panopto
-```
+The <code>runscript.py</code> file is located in the project root directory. Here, we can set the time period over which the automatic pathway searches for recordings added to Collaborate. The period is measured in weeks, and the default period is 1 week. This is adjusted via the argument of the function call set_search_start_date() from the Utilities.py module. 
+
+To launch, run the following from the root directory:
+
+ ```python runscript.py```
+
+This will print <code> -- PRESS ENTER FOR MANUAL RUN -- </code> and launch a countdown timer (default 15 seconds). If you do not press enter during this 15 second period, the automatic pathway will be launched. Otherwise, the manual pathway will be launched. The duration of the countdown timer can be adjusted via the <code>__main__</code> function in <code>runscript.py</code>.
+
+When manual run has been selected, two options are available: <code>Enter number of weeks or 'p' for preview</code>. Entering a number <code>n</code>(can be 0) will start the application and process recordings from <code>n</code> weeks back up until now. Entering <code>p</code> instead of a number will start preview mode, detailed below. Any other input will exit the application.
+
+
+### Preview Mode
+
+Preview mode allows to launch a "dry run" where the application will simulate what it would do, without actually doing anything. This is useful when looking for information on what launching the application would do if started.
+
+Using this mode will display this information for you: 
+   * <b>Courses on Collab</b> : Lists all courses added to Collaborate between search start-date and present 
+   * <b> Recordings per course </b> : Lists all recordings found for the courses listed above
+   * <b> Corresponding folders on Panopto </b>: Lists all folders found on Panopto that correspond to the courses found on Collaborate. Will also list courses that do not have corresponding Panopto folders
+   * <b> Planned uploads </b>: Lists all recordings that can be uploaded, and their destination folder on Panopto
+
+
+
+### PID File locking mechanism 
+
+Upon launching the application, a pid file is created in <code>/home/user/tmp/runscript.py.pid</code>. This stops two applications running at the same time, which would cause problems. As long as this file exists, no two instances of this application can run at the same time. If the application encounters an unexpected crash or is killed ungracefully then this pid file will remain in place and stop any further executions. This is useful to realise when something bad has happened and may be worth investigating. This pid file is safe to delete when the problem has been investigated and steps have been taken to repair what the sudden stop might have caused.
+
 
 ## High-Level Overview 
 
 
-
-You'll need to obtain all of the BB and Panopto credentials given in the ConfigTemplate.py. Copy the template into a new file called Config.py and fill out accordingly.
-(Note that your own specific Config.py will be included in the .gitignore).
 
 
 
