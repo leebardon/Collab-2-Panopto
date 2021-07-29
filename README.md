@@ -114,7 +114,7 @@ Upon launching the application, a pid file is created in <code>/home/user/tmp/ru
 ## Authors
 
 - **Lee Bardon** - Software Engineer, Uni. of Southampton - [leebardon](https://github.com/leebardon)
-- **Josh Bruylant** Software Engineer, Uni. of Southampton - [Frazic](https://github.com/Frazic)
+- **Josh Bruylant** - Software Engineer, Uni. of Southampton - [Frazic](https://github.com/Frazic)
    
 
 ## License
