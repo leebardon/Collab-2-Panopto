@@ -110,7 +110,19 @@ Upon launching the application, a pid file is created in <code>/home/user/tmp/ru
 
 ![](/data/Collab-2-Panopto.png)
 
+   
+## Authors
 
+- **Lee Bardon** - Software Engineer, Uni. of Southampton - [leebardon](https://github.com/leebardon)
+- **Josh Bruylant** Software Engineer, Uni. of Southampton - [Frazic](https://github.com/Frazic)
+   
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+   
+   
 ## Credits 
    
 This project was inspired by and adapted from: 
